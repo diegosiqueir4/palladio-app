@@ -1,0 +1,14 @@
+{
+  "name": "YASR",
+  "homepage": "https://github.com/YASGUI/YASR",
+  "version": "1.2.3",
+  "_release": "1.2.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.2.3",
+    "commit": "b8c498fa5499e617ba9bade68ef513aa5e26d4ea"
+  },
+  "_source": "https://github.com/YASGUI/YASR.git",
+  "_target": "~1.2.0",
+  "_originalSource": "https://github.com/YASGUI/YASR.git"
+}
