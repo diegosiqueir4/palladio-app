@@ -565,7 +565,8 @@ angular.module('palladio.controllers', ['palladio.services', 'palladio'])
     });
     
     componentService.promiseAdd('table', "#table-view-with-settings", {
-      showSettings: true
+      showSettings: true,
+			maxDisplay: 1000
     });
     
     componentService.promiseAdd('cards', "#card-view-with-settings", {
@@ -606,7 +607,14 @@ angular.module('palladio.controllers', ['palladio.services', 'palladio'])
               showSettings: true,
               showAccordion: true,
               showDropArea: false,
-              height: "200px"
+              height: "200px",
+							onRemove: function() {
+								// Use a closure to capture the current first child filter.
+								var firstChild = $('#filters').children()[0];
+								return function() {
+									firstChild.remove();
+								}
+							}()
             }, $scope);
 						// $('#filters').prepend($compile('<li><div data-palladio-facet-filter show-controls="true" show-accordion="true" show-drop-area="false" show-settings="true"></div></li>')($scope));
 					}
