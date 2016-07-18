@@ -25,14 +25,14 @@
     "test",
     "tests"
   ],
-  "version": "1.0.1",
-  "_release": "1.0.1",
+  "version": "1.1.0",
+  "_release": "1.1.0",
   "_resolution": {
     "type": "version",
-    "tag": "1.0.1",
-    "commit": "a7ed049ef72d1193748b826599cb66248d7c4468"
+    "tag": "1.1.0",
+    "commit": "504101ea207e4419cf7ef4f2eee895222126bd2f"
   },
   "_source": "https://github.com/humanitiesplusdesign/palladio-facet-component.git",
-  "_target": "~1.0.1",
+  "_target": "~1.1.0",
   "_originalSource": "palladio-facet-component"
 }
