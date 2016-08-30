@@ -451,7 +451,10 @@ angular.module('palladioTimelineComponent', ['palladio', 'palladio.services'])
 							.reduce(function (a, b) { return a + b; }, 0);
 					}));
 
-					y1.domain([0, groupMax]);
+					// If we exceed the current domain, expand. Otherwise remain static.
+					if(groupMax > y1.domain()[1]) {
+						y1.domain([0, groupMax]);
+					}
 
 					yAxis.scale(y1);
 
@@ -1310,7 +1313,12 @@ angular.module('palladioTimelineComponent', ['palladio', 'palladio.services'])
 						};
 						scope.functions["group"] = function(dim) {
 							scope.$apply(function(s) {
-								s.groupProp = s.groupDims.filter(function(f) { return f.key === dim.key; })[0];
+								if(dim) {
+									s.groupProp = s.groupDims.filter(function(f) { return f.key === dim.key; })[0];
+								} else {
+									s.groupProp = null;
+								}
+								
 							});
 						};
 					}

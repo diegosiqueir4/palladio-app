@@ -25,12 +25,12 @@
     "test",
     "tests"
   ],
-  "version": "1.0.2",
-  "_release": "1.0.2",
+  "version": "1.0.4",
+  "_release": "1.0.4",
   "_resolution": {
     "type": "version",
-    "tag": "1.0.2",
-    "commit": "9f736a2593009582f624b26d6e0300d26258c803"
+    "tag": "1.0.4",
+    "commit": "23adb69b47cbcf89a22e453a55c08184ffe53771"
   },
   "_source": "https://github.com/humanitiesplusdesign/palladio-timeline-component.git",
   "_target": "~1.0.2",

@@ -8,11 +8,13 @@ angular.module('palladioMapComponent', ['palladio', 'palladio.services'])
 
 			newScope.showSettings = newScope.showSettings === undefined ? true : newScope.showSettings;
 			newScope.mapHeight = newScope.height === undefined ? "100%" : newScope.height;
+			newScope.scrollWheelZoom = newScope.scrollWheelZoom === undefined ? true : newScope.scrollWheelZoom
 			newScope.functions = {};
 
 			var compileString = '<div class="with-settings" data-palladio-map-view-with-settings ';
 			compileString += 'show-settings=showSettings ';
 			compileString += 'map-height=mapHeight ';
+			compileString += 'scroll-wheel-zoom=scrollWheelZoom ';
 			compileString += 'functions=functions ';
 			compileString += '></div>';
 
@@ -29,6 +31,7 @@ angular.module('palladioMapComponent', ['palladio', 'palladio.services'])
 				layers: '=',
 				tileSets: '=',
 				mapHeight: '=',
+				scrollWheelZoom: '=',
 				center: '=',
 				zoom: '=',
 				popoverDims: '=',
@@ -909,25 +912,25 @@ angular.module('palladioMapComponent', ['palladio', 'palladio.services'])
 		        L.mapbox.accessToken = 'pk.eyJ1IjoiY2VzdGEiLCJhIjoiMFo5dmlVZyJ9.Io52RcCMMnYukT77GjDJGA';
 
 				// init map
-				var node,
-					link,
-					coordinates = [45.4640, 9.1916],
-					zoom = scope.zoom && typeof scope.zoom === 'number' ? scope.zoom : 3,
-					center = scope.center && Array.isArray(scope.center) && scope.center.length === 2 ?
+				var node;
+				var link;
+				var coordinates = [45.4640, 9.1916];
+				var zoom = scope.zoom && typeof scope.zoom === 'number' ? scope.zoom : 3;
+				var center = scope.center && Array.isArray(scope.center) && scope.center.length === 2 ?
 						new L.LatLng(scope.center[0], scope.center[1]) :
 						new L.LatLng(coordinates[0], coordinates[1]);
-		        	minZoom = 2,
-		        	maxZoom = 20,
-		        	m = new L.Map(element[0], {
+		    var minZoom = 2;
+				var maxZoom = 20;
+		    var m = new L.Map(element[0], {
 		            	center: center,
 		            	zoom: zoom,
 		            	minZoom : minZoom,
 		            	maxZoom : maxZoom,
-		            	scrollWheelZoom : true,
+		            	scrollWheelZoom : scope.scrollWheelZoom,
 		            	worldCopyJump: true
 		       		});
 
-		        m.attributionControl.addAttribution("© <a href='https://www.mapbox.com/map-feedback/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>");
+		    m.attributionControl.addAttribution("© <a href='https://www.mapbox.com/map-feedback/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>");
 				L.control.scale().addTo(m);
 				
 				// Zoom to data control
@@ -1115,6 +1118,7 @@ angular.module('palladioMapComponent', ['palladio', 'palladio.services'])
 			scope: {
 				showSettings: '=',
 				mapHeight: '=',
+				scrollWheelZoom: '=',
 				functions: '='
 			},
 
@@ -1448,18 +1452,18 @@ angular.module('palladioMapComponent', ['palladio', 'palladio.services'])
 							s.addLayer();
 						}
 						if(state.center) {
-							m.setView(state.center);
+							scope.center = state.center;
 						}
 						if(state.zoom) {
-							m.setZoom(state.zoom);
+							scope.zoom = state.zoom;
 						}
 					});
 				}
 
 				function exportState() {
 					return {
-						center: [ m.getCenter().lat, m.getCenter().lng ],
-						zoom: m.getZoom(),
+						center: scope.center,
+						zoom: scope.zoom,
 						tileSets: scope.tileSets.map(function (t) {
 							return {
 								"url": t.url,
