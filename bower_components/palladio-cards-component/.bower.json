@@ -25,12 +25,12 @@
     "test",
     "tests"
   ],
-  "version": "1.0.1",
-  "_release": "1.0.1",
+  "version": "1.0.2",
+  "_release": "1.0.2",
   "_resolution": {
     "type": "version",
-    "tag": "1.0.1",
-    "commit": "f7e71224821649143c61cabb33601cb8591e0e5b"
+    "tag": "1.0.2",
+    "commit": "8488b5723412ae402561084ae1f60416c26caa0b"
   },
   "_source": "https://github.com/humanitiesplusdesign/palladio-cards-component.git",
   "_target": "~1.0.1",
