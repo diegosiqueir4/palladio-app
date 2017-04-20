@@ -25,12 +25,12 @@
     "test",
     "tests"
   ],
-  "version": "1.1.4",
-  "_release": "1.1.4",
+  "version": "1.1.5",
+  "_release": "1.1.5",
   "_resolution": {
     "type": "version",
-    "tag": "1.1.4",
-    "commit": "b19d40bc9ebf815986557c1b00ee0f4fe9de61e3"
+    "tag": "1.1.5",
+    "commit": "1e1f132d786fdf0d4eaad8842026a66081b72402"
   },
   "_source": "https://github.com/humanitiesplusdesign/palladio-table-component.git",
   "_target": "~1.1.0",

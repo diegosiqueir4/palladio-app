@@ -27,14 +27,14 @@
     "test",
     "tests"
   ],
-  "version": "1.1.3",
-  "_release": "1.1.3",
+  "version": "1.1.5",
+  "_release": "1.1.5",
   "_resolution": {
     "type": "version",
-    "tag": "1.1.3",
-    "commit": "c8490da441840cda016fa358446eefe127934c7d"
+    "tag": "1.1.5",
+    "commit": "e86bc36564a81d3bac95be040a89dad7052c520b"
   },
   "_source": "https://github.com/humanitiesplusdesign/palladio-map-component.git",
-  "_target": "~1.1.1",
+  "_target": "~1.1.5",
   "_originalSource": "palladio-map-component"
 }

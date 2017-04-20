@@ -17,6 +17,11 @@
 	padding: 10px;
 }
 
+[data-palladio-map-view-with-settings] .settings {
+	max-height: 70%;
+  overflow-y: auto;
+}
+
 [data-palladio-map-view-with-settings] .sortable-override:empty {
   cursor: default;
 }
@@ -43,6 +48,24 @@
 	font-weight: 300;
 }
 
+[data-palladio-map-view] .legend-swatch {
+	display: inline-block;
+	margin: 2px;
+	width: 20px;
+	height: 20px;
+}
+
+[data-palladio-map-view] .layer-legend {
+	display: inline-block;
+	vertical-align: top;
+	min-height: 77px;
+	width: 75px;
+}
+
+[data-palladio-map-view] .point-legend {
+	display: inline-block;
+	vertical-align: top;
+}
 
 [data-palladio-map-view] .legend .circle {
 	background-color: rgba(0,0,0,.2);
